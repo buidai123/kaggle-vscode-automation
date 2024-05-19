@@ -1,0 +1,36 @@
+{
+    "workbench.colorTheme": "GitHub Dark"
+    "editor.parameterHints.enabled": true,
+    "editor.suggestOnTriggerCharacters": true,
+    "python.languageServer": "Pylance",
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": true
+    },
+    "editor.quickSuggestionsDelay": 10,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.acceptSuggestionOnCommitCharacter": true,
+    "editor.acceptSuggestionOnEnter": "on"
+    "editor.fontSize": 14,
+    "editor.quickSuggestionsDelay": 10,
+    "editor.suggestOnTriggerCharacters": true,
+    "editor.snippetSuggestions": "inline",
+    "editor.autoClosingBrackets": "languageDefined",
+    "editor.autoClosingQuotes": "languageDefined",
+    "editor.hover.enabled": true,
+    "editor.acceptSuggestionOnCommitCharacter": true,
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": true
+    },
+    "javascript.validate.enable": true,
+    "json.validate.enable": true,
+    "editor.lineHeight": 0,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "workbench.colorTheme": "GitHub Dark Default",
+    "editor.matchBrackets": "always"
+}

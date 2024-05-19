@@ -1,0 +1,9 @@
+Extensions installed on 0ab5-35-233-233-112.ngrok-free.app:
+github.github-vscode-theme
+ms-python.debugpy
+ms-python.python
+ms-toolsai.jupyter
+ms-toolsai.jupyter-keymap
+ms-toolsai.jupyter-renderers
+ms-toolsai.vscode-jupyter-cell-tags
+ms-toolsai.vscode-jupyter-slideshow
