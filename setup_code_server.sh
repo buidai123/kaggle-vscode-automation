@@ -1,6 +1,14 @@
 
 #!/bin/bash
 
+# Load environment variables from .env file
+if [ -f .env ]; then
+  source .env
+else
+  echo ".env file not found!"
+  exit 1
+fi
+
 # Check if NGROK_AUTH_TOKEN is set
 if [ -z "$NGROK_AUTH_TOKEN" ]; then
   echo "The NGROK_AUTH_TOKEN environment variable is missing"
