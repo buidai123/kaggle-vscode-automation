@@ -44,6 +44,12 @@ import sys
 import time
 from pyngrok import conf, ngrok
 
+# Print all environment variables for debugging
+print("Environment variables:\n======================")
+for key, value in os.environ.items():
+    print(f"{key}: {value}")
+print("\n======================")
+
 # Set ngrok auth token
 ngrok_auth_token = os.getenv('NGROK_AUTH_TOKEN')
 if ngrok_auth_token is None:
