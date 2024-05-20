@@ -1,34 +1,34 @@
-
 #!/bin/bash
-
-# Load environment variables from .env file
-if [ -f .env ]; then
-  source .env
-else
-  echo ".env file not found!"
-  exit 1
-fi
-
-# Check if NGROK_AUTH_TOKEN is set
-if [ -z "$NGROK_AUTH_TOKEN" ]; then
-  echo "The NGROK_AUTH_TOKEN environment variable is missing"
-  exit 1
-fi
 
 # Step 1: Install code-server
 curl -fsSL https://code-server.dev/install.sh | sh
 
 # Step 2: Generate a code-server configuration with a secure random password
-config_content=$(cat <<EOF
+python3 - <<EOF
+import os
+import secrets
+import base64
+
+# Generate a code-server configuration with a secure random password
+config_content = """
 bind-addr: 127.0.0.1:8080
 auth: password
-password: $(openssl rand -base64 32)
+password: {}
 cert: false
-EOF
-)
+"""
 
-mkdir -p ~/.config/code-server
-echo "$config_content" > ~/.config/code-server/config.yaml
+# Generate a random base64 encoded password
+random_password = base64.urlsafe_b64encode(secrets.token_bytes(24)).decode('utf-8')
+
+# Write the configuration content
+os.makedirs('/root/.config/code-server', exist_ok=True)
+with open('/root/.config/code-server/config.yaml', 'w') as config_file:
+    config_file.write(config_content.format(random_password))
+
+# Verify the configuration file
+print("Configuration file content:")
+
+EOF
 
 # Print configuration for verification
 cat ~/.config/code-server/config.yaml
@@ -36,20 +36,21 @@ cat ~/.config/code-server/config.yaml
 # Step 3: Install pyngrok and set up the tunnel
 pip install pyngrok
 
+# Prompt for ngrok auth token
+read -sp 'Enter your ngrok auth token: ' NGROK_AUTH_TOKEN
+echo
+
 # Python script to set up ngrok tunnel and apply extensions and settings from GitHub
 python3 - << EOF
 import os
 import time
 from pyngrok import conf, ngrok
 
-# Set ngrok auth token
-ngrok_auth_token = os.getenv('NGROK_AUTH_TOKEN')
-conf.get_default().auth_token = ngrok_auth_token
-
-print("Ngrok authentication setup with authtoken")
+# Set ngrok auth token from the environment variable
+conf.get_default().auth_token = os.getenv("NGROK_AUTH_TOKEN")
 
 # Establish the ngrok tunnel for port 8080
-http_tunnel = ngrok.connect()
+http_tunnel = ngrok.connect(8080)
 print(f"Public URL: {http_tunnel.public_url}")
 
 # Wait a bit to ensure code-server starts
