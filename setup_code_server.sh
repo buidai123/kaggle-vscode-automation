@@ -36,18 +36,19 @@ cat ~/.config/code-server/config.yaml
 # Step 3: Install pyngrok and set up the tunnel
 pip install pyngrok
 
-# Prompt for ngrok auth token
-read -sp 'Enter your ngrok auth token: ' NGROK_AUTH_TOKEN
-echo
-
 # Python script to set up ngrok tunnel and apply extensions and settings from GitHub
 python3 - << EOF
 import os
 import time
 from pyngrok import conf, ngrok
 
+# Fetch the ngrok auth token from the environment variable
+auth_token = os.getenv("NGROK_AUTH_TOKEN")
+if not auth_token:
+    raise ValueError("NGROK_AUTH_TOKEN is not set in the environment")
+
 # Set ngrok auth token from the environment variable
-conf.get_default().auth_token = os.getenv("NGROK_AUTH_TOKEN")
+conf.get_default().auth_token = auth_token
 
 # Establish the ngrok tunnel for port 8080
 http_tunnel = ngrok.connect(8080)
