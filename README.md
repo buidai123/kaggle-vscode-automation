@@ -18,6 +18,7 @@ This repository contains the necessary scripts and configuration files to quickl
 !./setup_code_server.sh
 ```
 **Export setting and extension to the current directory**
+
 if you wanna setup your own settings and extensions just change it then export it put it in github repo
 ```python
 cp ~/.local/share/code-server/User/settings.json ./settings.json
