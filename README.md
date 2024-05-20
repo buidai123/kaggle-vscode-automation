@@ -17,6 +17,12 @@ This repository contains the necessary scripts and configuration files to quickl
 !chmod +x setup_code_server.sh
 !./setup_code_server.sh
 ```
+**Export setting and extension to the current directory**
+if you wanna setup your own settings and extensions just change it then export it put it in github repo
+```python
+cp ~/.local/share/code-server/User/settings.json ./settings.json
+code-server --list-extensions > ./extensions-list.txt
+```
 
 Follow these steps to set up your VSCode environment in a new Kaggle notebook instance.
 
