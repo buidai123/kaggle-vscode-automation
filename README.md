@@ -9,6 +9,15 @@ This repository contains the necessary scripts and configuration files to quickl
 
 ## How to Use
 
+**Quick use**
+```python
+!git clone https://github.com/buidai123/kaggle-vscode-automation.git /kaggle/working/vscode-kaggle-setup
+!ls /kaggle/working/vscode-kaggle-setup
+%cd /kaggle/working/vscode-kaggle-setup
+!chmod +x setup_code_server.sh
+!./setup_code_server.sh
+```
+
 Follow these steps to set up your VSCode environment in a new Kaggle notebook instance.
 
 ### 1. Open a Kaggle Notebook
@@ -38,7 +47,7 @@ Navigate to the directory where the repository was cloned.
 Ensure the script has executable permissions.
 ```python
 #Make the setup script executable
-!chmod +x setupcodeserver.sh
+!chmod +x setup_code_server.sh
 
 ```
 
@@ -48,7 +57,7 @@ Execute the setup script to install `code-server`, set up configurations, restor
 ```python
 
 #Run the setup script
-!./setupcodeserver.sh
+!./setup_code_server.sh
 ```
 
 ### 6. Access Your VSCode Environment
