@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 # Load environment variables from .env file
@@ -13,8 +14,6 @@ if [ -z "$NGROK_AUTH_TOKEN" ]; then
   echo "The NGROK_AUTH_TOKEN environment variable is missing"
   exit 1
 fi
-
-echo "NGROK_AUTH_TOKEN is set to: $NGROK_AUTH_TOKEN" # Debugging line
 
 # Step 1: Install code-server
 curl -fsSL https://code-server.dev/install.sh | sh
@@ -40,35 +39,18 @@ pip install pyngrok
 # Python script to set up ngrok tunnel and apply extensions and settings from GitHub
 python3 - << EOF
 import os
-import sys
 import time
 from pyngrok import conf, ngrok
 
-# Print all environment variables for debugging
-print("Environment variables:\n======================")
-for key, value in os.environ.items():
-    print(f"{key}: {value}")
-print("\n======================")
-
 # Set ngrok auth token
 ngrok_auth_token = os.getenv('NGROK_AUTH_TOKEN')
-if ngrok_auth_token is None:
-    print("NGROK_AUTH_TOKEN environment variable is missing or not set correctly")
-    sys.exit(1)
-
-print("NGROK_AUTH_TOKEN is: ", ngrok_auth_token)  # Debugging line
-
 conf.get_default().auth_token = ngrok_auth_token
 
 print("Ngrok authentication setup with authtoken")
 
 # Establish the ngrok tunnel for port 8080
-try:
-    http_tunnel = ngrok.connect(8080)
-    print(f"Public URL: {http_tunnel.public_url}")
-except Exception as e:
-    print(f"Error establishing ngrok tunnel: {e}")
-    sys.exit(1)
+http_tunnel = ngrok.connect()
+print(f"Public URL: {http_tunnel.public_url}")
 
 # Wait a bit to ensure code-server starts
 time.sleep(5)
