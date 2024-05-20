@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "GitHub Dark"
+    "workbench.colorTheme": "GitHub Dark",
     "editor.parameterHints.enabled": true,
     "editor.suggestOnTriggerCharacters": true,
     "python.languageServer": "Pylance",
@@ -11,8 +11,9 @@
     "editor.quickSuggestionsDelay": 10,
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.acceptSuggestionOnCommitCharacter": true,
-    "editor.acceptSuggestionOnEnter": "on"
+    "editor.acceptSuggestionOnEnter": "on",
     "editor.fontSize": 14,
+    "editor.fontFamily": "JetBrains Mono, Consolas, 'Courier New', monospace",
     "editor.quickSuggestionsDelay": 10,
     "editor.suggestOnTriggerCharacters": true,
     "editor.snippetSuggestions": "inline",
@@ -31,6 +32,6 @@
     "editor.lineHeight": 0,
     "editor.insertSpaces": true,
     "editor.tabSize": 4,
-    "workbench.colorTheme": "GitHub Dark Default",
-    "editor.matchBrackets": "always"
+    "editor.matchBrackets": "always",
+    "jupyter.enableExtendedPythonKernelCompletions": true,
 }
