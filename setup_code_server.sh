@@ -43,9 +43,10 @@ import time
 from pyngrok import conf, ngrok
 
 # Set ngrok auth token
-conf.get_default().auth_token = os.getenv("NGROK_AUTH_TOKEN")
+ngrok_auth_token = os.getenv('NGROK_AUTH_TOKEN')
+conf.get_default().auth_token = ngrok_auth_token
 
-echo "Ngrok authentication setup with authtoken"
+print("Ngrok authentication setup with authtoken")
 
 # Establish the ngrok tunnel for port 8080
 http_tunnel = ngrok.connect()
