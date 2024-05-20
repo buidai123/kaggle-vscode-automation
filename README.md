@@ -9,12 +9,14 @@ This repository contains the necessary scripts and configuration files to quickl
 
 ## How to Use
 
-**Quick use**
+**Quick setup**
 ```python
 !git clone https://github.com/buidai123/kaggle-vscode-automation.git /kaggle/working/vscode-kaggle-setup
 !ls /kaggle/working/vscode-kaggle-setup
 %cd /kaggle/working/vscode-kaggle-setup
 !chmod +x setup_code_server.sh
+import os
+os.environ["NGROK_AUTH_TOKEN"] = "YOUR_NGROK_AUTHTOKENT"
 !./setup_code_server.sh
 ```
 **Export setting and extension to the current directory**
@@ -58,7 +60,13 @@ Ensure the script has executable permissions.
 
 ```
 
-### 5. Run the Setup Script
+### 5. Initialize Environment Variable
+```python
+import os
+os.environ["NGROK_AUTH_TOKEN"] = "YOUR_NGROK_AUTHTOKENT"
+```
+
+### 6. Run the Setup Script
 
 Execute the setup script to install `code-server`, set up configurations, restore extensions and user settings, and start `code-server` with an `ngrok` tunnel.
 ```python
