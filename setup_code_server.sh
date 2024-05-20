@@ -35,7 +35,7 @@ import time
 from pyngrok import conf, ngrok
 
 # Set ngrok auth token
-conf.get_default().auth_token = $NGROK_AUTH_TOKEN
+conf.get_default().auth_token = os.getenv("NGROK_AUTH_TOKEN")
 
 echo "Ngrok authentication setup with authtoken"
 
