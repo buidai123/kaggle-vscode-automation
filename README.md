@@ -20,7 +20,7 @@ Start a new notebook instance on the Kaggle platform.
 Run the following command to clone the repository containing the setup script and configuration files.
 ```python
 #Clone the GitHub repository containing the setup script
-!git clone [this repo](https://github.com/buidai123/kaggle-vscode-automation.git) /kaggle/working/vscode-kaggle-setup
+!git clone https://github.com/buidai123/kaggle-vscode-automation.git /kaggle/working/vscode-kaggle-setup
 #Verify the files are downloaded
 !ls /kaggle/working/vscode-kaggle-setup
 ```
