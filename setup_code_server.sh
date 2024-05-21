@@ -51,7 +51,7 @@ if not auth_token:
 conf.get_default().auth_token = auth_token
 
 # Establish the ngrok tunnel for port 8080
-http_tunnel = ngrok.connect(8080)
+http_tunnel = ngrok.connect()
 print(f"Public URL: {http_tunnel.public_url}")
 
 # Wait a bit to ensure code-server starts
