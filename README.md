@@ -23,7 +23,7 @@ os.environ["NGROK_AUTH_TOKEN"] = "YOUR_NGROK_AUTHTOKENT"
 ```
 **Export setting and extension to the current directory**
 
-if you wanna setup your own settings and extensions just change it then export it put it in github repo
+if you wanna setup your own settings and extensions just change it then export it then push it back to github repo
 ```python
 cp ~/.local/share/code-server/User/settings.json ./settings.json
 code-server --list-extensions > ./extensions-list.txt
@@ -77,7 +77,7 @@ Execute the setup script to install `code-server`, set up configurations, restor
 !./setup_code_server.sh
 ```
 
-### 6. Access Your VSCode Environment
+### 7. Access Your VSCode Environment
 
 Once the setup script finishes, it will output a `ngrok` URL. Open this URL in your browser to access your customized VSCode environment.
 
@@ -96,7 +96,7 @@ Customize your VSCode settings in this JSON file. Here is an example configurati
 
 ## Notes
 
-- Ensure you replace `"YOUR_NGROK_AUTH_TOKEN"` in the `setup_code_server.sh` script with your actual ngrok authentication token.
+- Ensure you replace `"YOUR_NGROK_AUTH_TOKEN"` with your actual ngrok authentication token.
 - Update your GitHub repository URL correctly in the Kaggle notebook commands.
 
 With this setup, you will have a personalized VSCode environment ready to use in your Kaggle notebooks each time you start a new instance.
