@@ -10,7 +10,8 @@ This repository contains the necessary scripts and configuration files to quickl
 ## How to Use
 
 **Quick setup**
-use run those commands in your Kaggle notebook and everything is settled
+
+Run those commands in your Kaggle notebook and everything will be settled
 ```python
 !git clone https://github.com/buidai123/kaggle-vscode-automation.git /kaggle/working/vscode-kaggle-setup
 !ls /kaggle/working/vscode-kaggle-setup
