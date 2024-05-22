@@ -97,7 +97,10 @@ Customize your VSCode settings in this JSON file. Here is an example configurati
 ## Notes
 
 - Ensure you replace `"YOUR_NGROK_AUTH_TOKEN"` with your actual ngrok authentication token.
-- Update your GitHub repository URL correctly in the Kaggle notebook commands.
+<img src="https://github.com/buidai123/kaggle-vscode-automation/assets/140616004/b25c0f22-c232-4ec4-9f91-10eb0627d7df" alt="image" width="500"/>
+
+- Open the Public URL and then click `visit site` then paste the password displayed as above
+
 
 With this setup, you will have a personalized VSCode environment ready to use in your Kaggle notebooks each time you start a new instance.
 
