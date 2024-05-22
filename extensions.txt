@@ -1,3 +1,4 @@
+bierner.docs-view
 github.github-vscode-theme
 ms-python.debugpy
 ms-python.python
