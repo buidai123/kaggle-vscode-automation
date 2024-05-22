@@ -2,7 +2,6 @@
     "workbench.colorTheme": "GitHub Dark",
     "editor.parameterHints.enabled": true,
     "editor.suggestOnTriggerCharacters": true,
-    "python.languageServer": "Jedi",
     "editor.quickSuggestions": {
         "other": true,
         "comments": false,
