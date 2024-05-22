@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Step 1: Install code-server
-curl -fsSL https://code-server.dev/install.sh | sh
+curl -fsSL https://code-server.dev/install.sh | sh -s -- --version 4.18.0
 
 # Step 2: Generate a code-server configuration with a secure random password
 python3 - <<EOF
